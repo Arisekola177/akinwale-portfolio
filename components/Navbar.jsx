@@ -25,11 +25,10 @@ const Navbar = () => {
    variants={navVariants}
    initial= 'hidden'
    whileInView='show'
-   className="flex justify-between items-center w-10/12 mx-auto py-6"
+   className="w-full h-20 sticky top-0 z-50 backdrop-blur-2xl transition-colors mx-auto  border-b-[1px] border-b-gray-600 px-4 py-6"
   >
-
-    
-     <Link href='/'>
+    <div className="w-10/12 mx-auto flex justify-between items-center">
+    <Link href='/'>
       <h2 className="text-3xl font-semibold">Akinwale</h2>
       <img 
        src="line.png"
@@ -59,15 +58,8 @@ const Navbar = () => {
               
      </div>
 
-     <div  className={` absolute left-0 pb-3 flex flex-col w-[50%] h-screen gap-5 mt-10 items-start bg-primary-black px-4 mb-4 z-[1] font-titleFont md:hidden ${isOpen ?'top-20 ':'top-[-490px]' }`}>
-        {
-                    NavLinks.map((link) => (
-                        <div className='lg:mt-5 xs:mt-2  ' key={link.name}>
-                           <Link className='xs:text-xs px-6' href={link.path}>{link.name}</Link>
-                          </div>
-                    ))
-                   }
-                   </div>
+    </div>
+    
   </motion.nav>
   )
 }
